@@ -14,11 +14,11 @@ int main ()
     fila.read(buf,fsize);
     string file = string(buf);
     fila.close();
-    cout << "Text from file is :" <<  buf << endl;
+    cout << "Text from file is: " << buf << endl;
     using namespace CryptoPP;
     SHA1 hash;
     string digest;
-    FileSource(fila, true,
+    StringSource(file, true,
                new HashFilter(hash,
                               new HexEncoder(
                                   new StringSink(digest))));
